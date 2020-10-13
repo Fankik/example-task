@@ -1,0 +1,263 @@
+$todo-list-background:  #7dc244;
+$todos-background:  #66ad2c;
+$text-color: white;
+$border-color: rgba(128, 128, 128, 0.467);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.center-container{
+    width: 500px;
+    margin: 0 auto;
+    
+    .task-create-first{
+        border: none;
+        text-decoration: underline;
+        color:  #0000FF;
+        background: transparent;
+        font-size: 15px;
+        margin-left: 20px;
+        
+        &:focus{
+            outline: 0;
+        }
+
+        &:active{
+            color:  #010164;
+        }
+    }
+}
+
+.task{
+    border: 1px solid $border-color;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding: 20px;
+    border-radius: 10px;
+    color: $text-color;
+    
+    .task-change{
+        float: right;
+        margin-top: 20px !important;
+    }
+
+    p{
+        margin-bottom: 10px;
+        color: black;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .todo-list{
+        background-color: $todo-list-background;
+        padding: 15px;
+        border-radius: 10px;
+
+        .todos{
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 15px;
+
+            p{
+                display: inline-block;
+                margin-bottom: 10px;
+                color: $text-color;
+                font-size: 20px;
+            }
+
+            .todos-status-checkbox{
+                float: right;
+                margin-top: 10px;
+                width: 15px;
+                height: 15px;
+            }
+
+            textarea{
+                resize: none;
+                width: 97%;
+                border-radius: 5px;
+                padding: 5px;
+                color: $text-color;
+                background-color: $todos-background;
+                border: 1px solid $border-color;
+                font-size: 15px;
+
+                &:focus{
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    .task-create, .task-remove, .task-change{
+        border: none;
+        text-decoration: underline;
+        color:  #0000FF;
+        background: transparent;
+        margin-top: 15px;
+        font-size: 15px;
+        
+        &:focus{
+            outline: 0;
+        }
+
+        &:active{
+            color:  #010164;
+        }
+    }
+
+    .task-remove{
+        color: red;
+        float: right;
+        &:active{
+            color:  #ac0000;
+        }
+    }
+}
+
+.modal-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    overflow: auto;
+    
+    .modal-task{
+        border: 1px solid $border-color;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        color: $text-color;
+        background-color: white;
+        width: 458px;
+        min-height: 20%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .todos-title-input, .task-title-input{
+            display: inline-block;
+            margin-bottom: 10px;
+            color: $text-color;
+            font-size: 20px;
+            background-color: $todos-background;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            padding: 3px;
+
+            &:focus{
+                outline: 0;
+            }
+        }
+
+        .modal-task-close{
+            float: right;
+            border: none;
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            margin-top: 5px;
+
+            & span{
+                width: 25px;
+                height: 2px;
+                background-color: red;
+                transform: rotate(45deg);
+                display: block;
+
+                &::after{
+                    width: 25px;
+                    height: 2px;
+                    background-color: red;
+                    content: '';
+                    display: block;
+                    transform: rotate(90deg);
+                }
+           }
+        }
+        
+        p{
+            margin-bottom: 10px;
+            color: black;
+            font-size: 30px;
+            font-weight: 500;
+            display: inline-block;
+        }
+    
+        .todo-list{
+            background-color: $todo-list-background;
+            padding: 15px;
+            border-radius: 10px;
+    
+            .todos{
+                border-bottom: 1px solid $border-color;
+                margin-bottom: 15px;
+    
+                .todos-status-checkbox{
+                    float: right;
+                    margin-top: 10px;
+                    width: 15px;
+                    height: 15px;
+                }
+    
+                textarea{
+                    resize: none;
+                    width: 97%;
+                    border-radius: 5px;
+                    padding: 5px;
+                    color: $text-color;
+                    background-color: $todos-background;
+                    border: 1px solid $border-color;
+                    font-size: 15px;
+    
+                    &:focus{
+                        outline: 0;
+                    }
+                }
+            }
+        }
+    
+       .task-remove, .task-save, .todos-add-button, .todos-remove-button{
+            border: none;
+            text-decoration: underline;
+            color: red;
+            float: right;
+            background: transparent;
+            margin-top: 15px;
+            font-size: 15px;
+            
+            &:focus{
+                outline: 0;
+            }
+    
+            &:active{
+                color:  #ac0000;
+            }
+        }
+
+        .task-save, .todos-add-button{
+            color: #0000FF;
+            float: left;
+
+            &:active{
+                color: #010164;
+            }
+        }
+
+        .todos-add-button{
+            margin: 0;
+            margin-bottom: 5px;
+            float: none;
+        }
+
+        .todos-remove-button{
+            margin-top: 5px;
+        }
+    }
+}

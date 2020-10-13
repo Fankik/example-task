@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center-container {
+  width: 500px;
+  margin: 0 auto;
+}
+.center-container .task-create-first {
+  border: none;
+  text-decoration: underline;
+  color: #0000FF;
+  background: transparent;
+  font-size: 15px;
+  margin-left: 20px;
+}
+.center-container .task-create-first:focus {
+  outline: 0;
+}
+.center-container .task-create-first:active {
+  color: #010164;
+}
+
+.task {
+  border: 1px solid rgba(128, 128, 128, 0.467);
+  margin-top: 50px;
+  margin-bottom: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.task .task-change {
+  float: right;
+  margin-top: 20px !important;
+}
+.task p {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 30px;
+  font-weight: 500;
+}
+.task .todo-list {
+  background-color: #7dc244;
+  padding: 15px;
+  border-radius: 10px;
+}
+.task .todo-list .todos {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.467);
+  margin-bottom: 15px;
+}
+.task .todo-list .todos p {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+}
+.task .todo-list .todos .todos-status-checkbox {
+  float: right;
+  margin-top: 10px;
+  width: 15px;
+  height: 15px;
+}
+.task .todo-list .todos textarea {
+  resize: none;
+  width: 97%;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  background-color: #66ad2c;
+  border: 1px solid rgba(128, 128, 128, 0.467);
+  font-size: 15px;
+}
+.task .todo-list .todos textarea:focus {
+  outline: 0;
+}
+.task .task-create, .task .task-remove, .task .task-change {
+  border: none;
+  text-decoration: underline;
+  color: #0000FF;
+  background: transparent;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.task .task-create:focus, .task .task-remove:focus, .task .task-change:focus {
+  outline: 0;
+}
+.task .task-create:active, .task .task-remove:active, .task .task-change:active {
+  color: #010164;
+}
+.task .task-remove {
+  color: red;
+  float: right;
+}
+.task .task-remove:active {
+  color: #ac0000;
+}
+
+.modal-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.459);
+  overflow: auto;
+}
+.modal-container .modal-task {
+  border: 1px solid rgba(128, 128, 128, 0.467);
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  color: white;
+  background-color: white;
+  width: 458px;
+  min-height: 20%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.modal-container .modal-task .todos-title-input, .modal-container .modal-task .task-title-input {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
+  background-color: #66ad2c;
+  border: 1px solid rgba(128, 128, 128, 0.467);
+  border-radius: 5px;
+  padding: 3px;
+}
+.modal-container .modal-task .todos-title-input:focus, .modal-container .modal-task .task-title-input:focus {
+  outline: 0;
+}
+.modal-container .modal-task .modal-task-close {
+  float: right;
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  margin-top: 5px;
+}
+.modal-container .modal-task .modal-task-close span {
+  width: 25px;
+  height: 2px;
+  background-color: red;
+  transform: rotate(45deg);
+  display: block;
+}
+.modal-container .modal-task .modal-task-close span::after {
+  width: 25px;
+  height: 2px;
+  background-color: red;
+  content: '';
+  display: block;
+  transform: rotate(90deg);
+}
+.modal-container .modal-task p {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 30px;
+  font-weight: 500;
+  display: inline-block;
+}
+.modal-container .modal-task .todo-list {
+  background-color: #7dc244;
+  padding: 15px;
+  border-radius: 10px;
+}
+.modal-container .modal-task .todo-list .todos {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.467);
+  margin-bottom: 15px;
+}
+.modal-container .modal-task .todo-list .todos .todos-status-checkbox {
+  float: right;
+  margin-top: 10px;
+  width: 15px;
+  height: 15px;
+}
+.modal-container .modal-task .todo-list .todos textarea {
+  resize: none;
+  width: 97%;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  background-color: #66ad2c;
+  border: 1px solid rgba(128, 128, 128, 0.467);
+  font-size: 15px;
+}
+.modal-container .modal-task .todo-list .todos textarea:focus {
+  outline: 0;
+}
+.modal-container .modal-task .task-remove, .modal-container .modal-task .task-save, .modal-container .modal-task .todos-add-button, .modal-container .modal-task .todos-remove-button {
+  border: none;
+  text-decoration: underline;
+  color: red;
+  float: right;
+  background: transparent;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.modal-container .modal-task .task-remove:focus, .modal-container .modal-task .task-save:focus, .modal-container .modal-task .todos-add-button:focus, .modal-container .modal-task .todos-remove-button:focus {
+  outline: 0;
+}
+.modal-container .modal-task .task-remove:active, .modal-container .modal-task .task-save:active, .modal-container .modal-task .todos-add-button:active, .modal-container .modal-task .todos-remove-button:active {
+  color: #ac0000;
+}
+.modal-container .modal-task .task-save, .modal-container .modal-task .todos-add-button {
+  color: #0000FF;
+  float: left;
+}
+.modal-container .modal-task .task-save:active, .modal-container .modal-task .todos-add-button:active {
+  color: #010164;
+}
+.modal-container .modal-task .todos-add-button {
+  margin: 0;
+  margin-bottom: 5px;
+  float: none;
+}
+.modal-container .modal-task .todos-remove-button {
+  margin-top: 5px;
+}
